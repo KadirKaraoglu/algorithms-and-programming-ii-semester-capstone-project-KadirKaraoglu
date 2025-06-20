@@ -1,0 +1,6 @@
+{
+ "input" : { "text4" : "GAZIANTEP IS THE MOST BEAUTFULL CITY IN TURKIYE",
+            "pattern4" : "TURKIYE"
+        },
+  "output" : [40]        
+}

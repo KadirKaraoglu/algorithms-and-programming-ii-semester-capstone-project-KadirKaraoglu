@@ -1,0 +1,9 @@
+                                         THE BOYER MOORE SEARCH ALGORITHM
+                                                (Kadir Karaoğlu)
+
+
+The Boyer-Moore algorithm is a very fast way to find a small piece of text, called the pattern, inside a larger text. What makes it special is that it doesn't just look from left to right like many other search methods. Instead, it starts checking the pattern from its right end and moves backwards. This helps it jump ahead much faster, skipping over parts of the text that definitely don't match.
+
+It uses two main rules to figure out how far to jump. First, there's the Bad Character Rule. If a character in the text doesn't match the pattern, this rule helps decide the biggest jump. For example, if the mismatched character from the text isn't in the pattern at all, the algorithm can slide the pattern past that character entirely. If the character is in the pattern, it slides the pattern so that character lines up. Second, there's the Good Suffix Rule. This rule comes into play when a part of the pattern (the end bit, or "suffix") does match in the text, but the character just before it doesn't. If that matched suffix appears somewhere else in the pattern, the algorithm shifts the pattern to align that repeated part.
+
+The Boyer-Moore search combines these two rules. When it finds a mismatch, it calculates a shift amount using both rules, and then it takes the larger of the two shifts. This smart move allows it to skip many comparisons, making it incredibly efficient, especially when you're searching for a short pattern in a very long piece of text.
